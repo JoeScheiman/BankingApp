@@ -28,5 +28,25 @@ namespace Banking.Tests
             // Assert
             Assert.Equal(200M, account.Balance);
         }
+
+        [Fact]
+        public void Withdraw_Reduces_Balance()
+        {
+            CheckingAccount account = new CheckingAccount();
+
+            account.Deposit(100M);
+
+            account.Withdraw(50M);
+
+            Assert.Equal(50M, account.Balance);
+        }
+
+        [Fact]
+        public void Foo()
+        {
+            CheckingAccount kylesAccount = new CheckingAccount();
+            Console.WriteLine(kylesAccount);
+
+        }
     }
 }
